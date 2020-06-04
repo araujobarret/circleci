@@ -12,6 +12,7 @@ jobs:
       - run:
           name: Test
           command: |
+            ls -la
             npm run test
   build:
     executor: node
