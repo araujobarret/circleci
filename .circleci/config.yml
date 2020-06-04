@@ -5,6 +5,14 @@ executors:
       - image: circleci/node:12.14.1
 
 jobs:
+  install:
+    executor: node
+    steps:
+      - run:
+          name: Install
+          command: |
+            ls -la
+            npm install
   test:
     executor: node
     steps:
@@ -22,7 +30,8 @@ jobs:
             npm run build
 
 workflows:
-  "circleci":
+  "server":
     jobs:
+      - install
       - test
       - build
