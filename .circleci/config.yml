@@ -28,6 +28,7 @@ jobs:
       - run:
           name: Build
           command: |
+            ls -la
             npm run build
 
 workflows:
