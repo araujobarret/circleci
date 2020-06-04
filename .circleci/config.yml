@@ -5,15 +5,23 @@ executors:
       - image: circleci/node:12.14.1
 
 jobs:
-  test_build:
+  test:
     executor: node
     steps:
       - run:
           name: Test
           command: |
             npm run test
+  build:
+    executor: node
+    steps:
       - run:
           name: Build
           command: |
             npm run build
 
+workflows:
+  "circleci":
+    jobs:
+      - test
+      - build
