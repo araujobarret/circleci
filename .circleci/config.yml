@@ -33,8 +33,10 @@ jobs:
             npm run build
 
 workflows:
-  "server":
+  "setup":
     jobs:
       - install
+  "test-buid":
+    jobs:
       - test
       - build
