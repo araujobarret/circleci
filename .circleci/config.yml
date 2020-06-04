@@ -17,7 +17,6 @@ jobs:
   test:
     executor: node
     steps:
-      - checkout
       - run:
           name: Test
           command: |
@@ -26,17 +25,18 @@ jobs:
   build:
     executor: node
     steps:
-      - checkout
       - run:
           name: Build
           command: |
             npm run build
 
 workflows:
-  "setup":
+  setup:
     jobs:
       - install
-  "test-buid":
-    jobs:
-      - test
-      - build
+      - test:
+          requires:
+            - install
+      - build:
+          requires:
+            - Install
