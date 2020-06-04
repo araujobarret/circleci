@@ -7,10 +7,6 @@ executors:
 jobs:
   install:
     executor: node
-    persist_to_workspace:
-      root:
-        paths:
-          - .
     steps:
       - checkout
       - run:
@@ -18,6 +14,10 @@ jobs:
           command: |
             ls -la
             npm install
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
   test:
     executor: node
     steps:
