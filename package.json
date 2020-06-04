@@ -4,6 +4,7 @@
   "description": "Academy Repo",
   "main": "index.js",
   "scripts": {
+    "build": "tsc -p tsconfig.release.json",
     "test": "jest",
     "start:dev": "ts-node src/index.ts"
   },
