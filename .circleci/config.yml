@@ -7,8 +7,8 @@ executors:
 jobs:
   install:
     executor: node
-    working_directory: ~/circleci
     steps:
+      - checkout
       - run:
           name: Install
           command: |
@@ -16,8 +16,8 @@ jobs:
             npm install
   test:
     executor: node
-    working_directory: ~/circleci
     steps:
+      - checkout
       - run:
           name: Test
           command: |
@@ -25,8 +25,8 @@ jobs:
             npm run test
   build:
     executor: node
-    working_directory: ~/circleci
     steps:
+      - checkout
       - run:
           name: Build
           command: |
