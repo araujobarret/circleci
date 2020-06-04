@@ -40,4 +40,4 @@ workflows:
             - install
       - build:
           requires:
-            - Install
+            - install
