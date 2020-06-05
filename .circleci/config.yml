@@ -23,10 +23,9 @@ jobs:
           paths:
             - /home/circleci/.npm
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - .
-            - node_modules
   test:
     executor: node
     steps:
