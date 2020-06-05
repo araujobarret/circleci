@@ -39,6 +39,8 @@ jobs:
   build:
     executor: node
     steps:
+      - attach_workspace:
+          at: ~/
       - run:
           name: Build
           command: |

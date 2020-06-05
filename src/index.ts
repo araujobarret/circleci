@@ -4,11 +4,11 @@ const server: express.Application = express();
 const PORT = 3000;
 const NODE_ENV = "development";
 
-server.get('/', (req, res) => {
+server.get('/', ({}, res) => {
   res.send('It works');
 });
 
-server.listen(PORT, (error: boolean): void => {
+const app = server.listen(PORT, (error: boolean): void => {
   if (error) {
     console.error('ERROR - Unable to start server.');
   } else {
@@ -18,4 +18,4 @@ server.listen(PORT, (error: boolean): void => {
   }
 });
 
-export default server;
+export default app;

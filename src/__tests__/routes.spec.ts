@@ -2,9 +2,19 @@ import * as request from 'supertest';
 import server from '../index';
 
 describe('Tools routes tests', () => {
-  test('Test application get route', async () => {
-    await request(server)
+  afterAll((done) => {
+    server.close(done)
+  });
+
+  test('Test application get route', (done) => {
+    request(server)
       .get('/')
-      .expect(200);
+      .expect(200)
+      .end((err, res) => {
+        if (err) {
+          done(err);
+        }
+        done();
+      });      
   });
 });

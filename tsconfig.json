@@ -21,5 +21,6 @@
     "lib": ["es2016", "dom"],
     "typeRoots": ["./node_modules/@types"]
   },
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"],
   "include": ["src/**/*", "__tests__/**/*"]
 }
