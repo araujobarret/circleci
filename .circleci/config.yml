@@ -7,10 +7,8 @@ executors:
 jobs:
   install:
     executor: node
-    working_directory: ~/app
     steps:
-      - checkout:
-          path: ~/app
+      - checkout
       - restore_cache:
           key: npm-cache-v4-{{ checksum "package-lock.json" }}
       - run:
@@ -25,12 +23,11 @@ jobs:
           paths:
             - /home/circleci/.npm
       - persist_to_workspace:
-          root: ~/
+          root: .
           paths:
-            - app
+            - .
   test:
     executor: node
-    working_directory: ~/app
     steps:
       - run:
           name: Test
