@@ -23,7 +23,7 @@ jobs:
           paths:
             - /home/circleci/.npm
       - persist_to_workspace:
-          root: .
+          root: ~/app
           paths:
             - .
   test:
