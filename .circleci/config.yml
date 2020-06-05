@@ -14,10 +14,7 @@ jobs:
       - run:
           name: Install
           command: |
-            ls -la
             npm install
-            cd ..
-            ls -la
       - save_cache:
           key: npm-cache-v4-{{ checksum "package-lock.json" }}
           paths:
@@ -34,7 +31,6 @@ jobs:
       - run:
           name: Test
           command: |
-            ls -la
             npm run test
   build:
     executor: node
@@ -44,7 +40,6 @@ jobs:
       - run:
           name: Build
           command: |
-            ls -la
             npm run build
 
 workflows:
