@@ -28,6 +28,7 @@ jobs:
             - .
   test:
     executor: node
+    working_directory: ~/app
     steps:
       - run:
           name: Test
